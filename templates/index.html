@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deteksi Hoax - IndoBERT</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 Deteksi Berita Hoax</h1>
+    <p class="subtitle">Masukkan judul artikel untuk memprediksi apakah hoax atau valid (menggunakan model IndoBERT)</p>
+
+    <textarea id="titleInput" placeholder="Contoh: Pemerintah resmi naikkan harga BBM mulai besok..." rows="3"></textarea>
+
+    <button id="predictBtn" onclick="predictHoax()">Prediksi</button>
+
+    <div id="result" class="result hidden">
+      <h2 id="resultLabel"></h2>
+      <p id="resultConfidence"></p>
+
+      <div class="bar-container">
+        <div class="bar-label">
+          <span>Non-Hoax (Valid)</span>
+          <span id="probValid">0%</span>
+        </div>
+        <div class="bar-bg"><div id="barValid" class="bar bar-valid"></div></div>
+
+        <div class="bar-label">
+          <span>Hoax</span>
+          <span id="probHoax">0%</span>
+        </div>
+        <div class="bar-bg"><div id="barHoax" class="bar bar-hoax"></div></div>
+      </div>
+    </div>
+
+    <div id="errorMsg" class="error hidden"></div>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
